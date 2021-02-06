@@ -23,11 +23,37 @@ const displayFood = foods => {
             const foodDiv = document.createElement('div');
             //countryDiv.className = 'country';
             const foodInfo = `
-            <div style="background-color:red" onclick="displayFoodDetail('${food.idMeal}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <h3 class="country-name">${food.strMeal}</h3>
-            <p>${food.strCategory}</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4 ">
+                <div class="col d-flex justify-content-around">
+                    <div class="card h-100 shadow p-3 bg-white rounded border-0" onclick="displayFoodDetail('${food.idMeal}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <img src="${food.strMealThumb}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${food.strMeal}</h5>
+
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
-        `;
+            `;
+
+            //     const foodInfo = `
+            //     <div class="card" style="width: 18rem;">
+            //     <img src="..." class="card-img-top" alt="...">
+            //     <div class="card-body">
+            //       <h5 class="card-title">Card title</h5>
+            //       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            //       <a href="#" class="btn btn-primary">Go somewhere</a>
+            //     </div>
+            //   </div>
+            //     `;
+            //     const foodInfo = `
+            //     <div style="background-color:red" onclick="displayFoodDetail('${food.idMeal}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            //     <h3 class="country-name">${food.strMeal}</h3>
+            //     <p>${food.strCategory}</p>
+            //     </div>
+            // `;
             foodDiv.innerHTML = foodInfo;
             foodsDiv.appendChild(foodDiv);
         });
@@ -35,7 +61,7 @@ const displayFood = foods => {
 }
 
 const displayFoodDetail = id => {
-    // console.log(id);
+    console.log(id);
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
     fetch(url)
         .then(res => res.json())
