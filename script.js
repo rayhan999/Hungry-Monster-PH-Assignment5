@@ -1,4 +1,6 @@
 const getFoodInfo = () => {
+    document.getElementById('resultDetails').innerHTML = "";
+    document.getElementById('result').innerHTML = "";
     let searchBox = document.getElementById('searchText');
     let searchValue = searchBox.value;
     //console.log(searchValue);
@@ -10,10 +12,6 @@ const getFoodInfo = () => {
 
 const displayFood = foods => {
     console.log(foods.meals);
-    // for (let i = 0; i < foods.meals.length; i++) {
-    //     const food = foods.meals[i];
-    //     console.log(food.strMeal);
-    // }
     const foodsDiv = document.getElementById('result');
     if (foods.meals === null) {
 
@@ -25,7 +23,7 @@ const displayFood = foods => {
             const foodDiv = document.createElement('div');
             //countryDiv.className = 'country';
             const foodInfo = `
-            <div style="background-color:red" onclick="displayFoodDetail('${food.idMeal}')">
+            <div style="background-color:red" onclick="displayFoodDetail('${food.idMeal}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <h3 class="country-name">${food.strMeal}</h3>
             <p>${food.strCategory}</p>
             </div>
@@ -44,12 +42,6 @@ const displayFoodDetail = id => {
         .then(data => renderFoodInfo(data.meals[0]));
 }
 
-// const displayFoodDetail = id => {
-//     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-//     fetch(url)
-//         .then(res => res.json())
-//         .then(data => renderCountryInfo(data[0]));
-// }
 
 const renderFoodInfo = food => {
     const foodDiv = document.getElementById('resultDetails');
@@ -60,3 +52,4 @@ const renderFoodInfo = food => {
         <img src="${food.strMealThumb}">
     `
 }
+
