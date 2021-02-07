@@ -17,7 +17,7 @@ const displayFood = foods => {
 
         console.log("no");
         const invalidFood = `
-        <p class="text-center bg-light rounded p-5 fw-bold">No Meal found</p>
+        <p class="text-center bg-secondary rounded p-3 fw-bold invalidFood">Sorry! Meal not available</p>
         `;
         foodsDiv.innerHTML = invalidFood;
     } else {
@@ -60,7 +60,7 @@ const renderFoodInfo = food => {
 
     foodDiv.innerHTML = `
         
-        <img src="${food.strMealThumb}" class=" image img-fluid rounded">
+        <img src="${food.strMealThumb}" class=" imageModal rounded">
         <h1 class="fw-bold">${food.strMeal}</h1>
         <p class="fw-bold">Ingredients: </p>
 
@@ -120,7 +120,7 @@ const renderFoodInfo = food => {
 
         </div>
     `;
-
+    // ----------------Hide parentNode if no ingredient found----------------------------
     let labelNumber = document.getElementsByTagName('label');
     console.log(labelNumber);
     for (let i = 0; i < labelNumber.length; i++) {
