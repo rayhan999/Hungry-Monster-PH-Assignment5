@@ -150,7 +150,7 @@ const renderFoodInfo = food => {
     console.log(labelNumber);
     for (let i = 0; i < labelNumber.length; i++) {
         console.log(labelNumber[i].innerText);
-        if (labelNumber[i].innerText == "") {
+        if (labelNumber[i].innerText == "" || labelNumber[i].innerText == "null null") {
             labelNumber[i].parentNode.style.display = "none";
             // console.log(parent);
         } else {

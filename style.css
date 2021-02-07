@@ -29,9 +29,7 @@ body{
     font-weight: 700;
     font-size:24px;
 }
-.navbar-brand:hover{
-    color:#3B2D64;
-}
+
 .nav-link{
     color:#383838;
 }
