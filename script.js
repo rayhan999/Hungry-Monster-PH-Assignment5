@@ -55,9 +55,6 @@ const displayFoodDetail = id => {
 const renderFoodInfo = food => {
     const foodDiv = document.getElementById('resultDetails');
 
-
-
-
     foodDiv.innerHTML = `
         
         <img src="${food.strMealThumb}" class=" imageModal rounded">
@@ -116,6 +113,34 @@ const renderFoodInfo = food => {
             <div>
                 <i class="fa fa-check-square checkbox"></i>
                 <label>${food.strMeasure13} ${food.strIngredient13} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure14} ${food.strIngredient14} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure15} ${food.strIngredient15} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure16} ${food.strIngredient16} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure17} ${food.strIngredient17} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure18} ${food.strIngredient18} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure19} ${food.strIngredient19} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure20} ${food.strIngredient20} </label>
             </div>
 
         </div>
