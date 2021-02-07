@@ -28,7 +28,7 @@ const displayFood = foods => {
             const foodInfo = `
                 <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="card h-100 shadow bg-white rounded-5 border-0" onclick="displayFoodDetail('${food.idMeal}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <img src="${food.strMealThumb}" class="card-img-top" alt="...">
+                        <img src="${food.strMealThumb}" class="image card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center">${food.strMeal}</h5>
                         </div>
@@ -54,12 +54,67 @@ const displayFoodDetail = id => {
 
 const renderFoodInfo = food => {
     const foodDiv = document.getElementById('resultDetails');
+
+
+
+
     foodDiv.innerHTML = `
         
-        <img src="${food.strMealThumb}" class="img-fluid rounded">
+        <img src="${food.strMealThumb}" class=" image img-fluid rounded">
         <h1 class="">${food.strMeal}</h1>
-        <p>Ingredients: ${food.strMeal}</p>
-        <p>Area: ${food.strCategory}</p>
-    `
+        <p>Ingredients: </p>
+
+        <div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure1} ${food.strIngredient1} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure2} ${food.strIngredient2} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure3} ${food.strIngredient3} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure4} ${food.strIngredient4} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure5} ${food.strIngredient5} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure6} ${food.strIngredient6} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure7} ${food.strIngredient7} </label>
+            </div>
+            <div id="ingredientNumber">
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure8} ${food.strIngredient8} </label>
+            </div>
+            <div id="ingredientNumber">
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure9} ${food.strIngredient9} </label>
+            </div>
+        </div>
+    `;
+
+    let labelNumber = document.getElementsByTagName('label');
+    console.log(labelNumber);
+    for (let i = 0; i < labelNumber.length; i++) {
+        console.log(labelNumber[i].innerText);
+        if (labelNumber[i].innerText == "") {
+            labelNumber[i].parentNode.style.display = "none";
+            // console.log(parent);
+        } else {
+            //console.log("no");
+        }
+
+    }
 }
 

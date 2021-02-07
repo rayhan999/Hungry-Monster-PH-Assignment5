@@ -8,6 +8,9 @@ body{
     font-size:18px;
     
 }
+image{
+    height: 200px;
+}
 .banner-title {
     font-size: 45px;
 }
@@ -49,4 +52,8 @@ input{
 
 .card-title{
     font-weight: 700;
+}
+
+.checkbox{
+   color:#F06C4E;
 }
