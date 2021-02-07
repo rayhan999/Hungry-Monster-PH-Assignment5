@@ -61,8 +61,8 @@ const renderFoodInfo = food => {
     foodDiv.innerHTML = `
         
         <img src="${food.strMealThumb}" class=" image img-fluid rounded">
-        <h1 class="">${food.strMeal}</h1>
-        <p>Ingredients: </p>
+        <h1 class="fw-bold">${food.strMeal}</h1>
+        <p class="fw-bold">Ingredients: </p>
 
         <div>
             <div>
@@ -93,14 +93,31 @@ const renderFoodInfo = food => {
                 <i class="fa fa-check-square checkbox"></i>
                 <label>${food.strMeasure7} ${food.strIngredient7} </label>
             </div>
-            <div id="ingredientNumber">
+            <div>
                 <i class="fa fa-check-square checkbox"></i>
                 <label>${food.strMeasure8} ${food.strIngredient8} </label>
             </div>
-            <div id="ingredientNumber">
+            <div>
                 <i class="fa fa-check-square checkbox"></i>
                 <label>${food.strMeasure9} ${food.strIngredient9} </label>
             </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure10} ${food.strIngredient10} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure11} ${food.strIngredient11} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure12} ${food.strIngredient12} </label>
+            </div>
+            <div>
+                <i class="fa fa-check-square checkbox"></i>
+                <label>${food.strMeasure13} ${food.strIngredient13} </label>
+            </div>
+
         </div>
     `;
 
