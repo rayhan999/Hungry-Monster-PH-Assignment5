@@ -16,48 +16,27 @@ const displayFood = foods => {
     if (foods.meals === null) {
 
         console.log("no");
-        foodsDiv.innerHTML = "";
+        const invalidFood = `
+        <p class="text-center bg-light rounded p-5 fw-bold">No Meal found</p>
+        `;
+        foodsDiv.innerHTML = invalidFood;
     } else {
 
         foods.meals.forEach(food => {
             const foodDiv = document.createElement('div');
 
             const foodInfo = `
-            <div class="row row-cols-1 row-cols-md-3 g-4 d-flex flex-nowrap">
-                <div class="col">
-                    <div class="card h-100 shadow p-3 bg-white rounded border-0" onclick="displayFoodDetail('${food.idMeal}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <div class="card h-100 shadow bg-white rounded-5 border-0" onclick="displayFoodDetail('${food.idMeal}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <img src="${food.strMealThumb}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">${food.strMeal}</h5>
-
-
+                            <h5 class="card-title text-center">${food.strMeal}</h5>
                         </div>
-
                     </div>
-                </div>
-            </div>
+                </div>   
             `;
 
-            // const foodInfo = `
-            //     <div class="row">
-            //         <div class="col-sm-3">
-            //             <div class="card">
-            //                 <img class="card-img-top img-fluid" src="//placehold.it/500x200" alt="Card image cap">
-            //                 <div class="card-block">
-            //                     <h4 class="card-title">Card title</h4>
-            //                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            //                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            //                 </div>
-            //             </div>
-            //         </div>
-            //     </div>
-            //     `;
-            //     const foodInfo = `
-            //     <div style="background-color:red" onclick="displayFoodDetail('${food.idMeal}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            //     <h3 class="country-name">${food.strMeal}</h3>
-            //     <p>${food.strCategory}</p>
-            //     </div>
-            // `;
+
             foodDiv.innerHTML = foodInfo;
             foodsDiv.appendChild(foodDiv);
         });
@@ -76,10 +55,11 @@ const displayFoodDetail = id => {
 const renderFoodInfo = food => {
     const foodDiv = document.getElementById('resultDetails');
     foodDiv.innerHTML = `
-        <h1>${food.idMeal}</h1>
-        <p>Population: ${food.strMeal}</p>
+        
+        <img src="${food.strMealThumb}" class="img-fluid rounded">
+        <h1 class="">${food.strMeal}</h1>
+        <p>Ingredients: ${food.strMeal}</p>
         <p>Area: ${food.strCategory}</p>
-        <img src="${food.strMealThumb}">
     `
 }
 

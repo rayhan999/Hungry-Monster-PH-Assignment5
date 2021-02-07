@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'PT Serif', serif;
+    font-weight: 500;
+    font-size:18px;
+    
+}
+.banner-title {
+    font-size: 45px;
+}
+.navbar .container-fluid {
+    padding: 0 100px;
+}
+.navbar-brand{
+    width:60px;
+}
+.cooking-master{
+    color:#F06C4E;
+    font-weight: 700;
+    font-size:24px;
+}
+.navbar-brand:hover{
+    color:#3B2D64;
+}
+.nav-link{
+    color:#383838;
+}
+.nav-link:hover{
+    color:#292424;
+}
+.search-item{
+    margin-top:8%;
+}
+.btn-search{
+    background-color:#F06C4E;
+    color:#FFFFFF;
+}
+.btn-search:hover{
+    background-color:#c02806;
+    color:#FFFFFF;
+}
+input{
+    width: 350px;
+    padding: 5px;
+}
+
+.card-title{
+    font-weight: 700;
+}
